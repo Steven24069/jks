@@ -1,0 +1,5 @@
+authtoken: <2OPTzYmMQ1bhZyLdC0Awc1BFhXV_6YvEU3Tmr2ZmnXXBykMp8>
+tunnels:
+    default:
+        proto: http
+        addr: 8080
