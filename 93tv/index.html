@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>稳球直播下载</title>
+	<link rel="icon" href="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logo.png">
+    <style type="text/css">
+        body {
+            background: '#fff';
+            margin: 0px;
+        }
+
+        /* 弹窗样式*/
+        .alertmes {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: none;
+            z-index: 99999;
+
+        }
+
+        .am-wrapper {
+            width: 90%;
+            margin: 500px auto 0;
+            max-width: 70%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #ffffdd;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #ffffdd;
+        }
+
+        .am-mes {
+            margin: 10px 0 30px;
+            font-size: 40px;
+        }
+
+        .am-btn {
+            text-align: right;
+        }
+
+        .am-confirm-btn {
+            border: none;
+            padding: 5px 10px;
+            background-color: #1964f0;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+            font-size: 35px;
+            margin-right: 10px;
+        }
+
+        .am-cancel-btn {
+            background-color: #c9c9c9;
+            border: none;
+            padding: 5px 10px;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+            font-size: 35px;
+        }
+        /* 弹窗样式end*/
+
+        .download {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .fixed_download_button {
+            width: 110vw;
+            position: fixed;
+            top: 0px;
+            z-index: 100;
+            /* background: linear-gradient(135deg, #ffffff, #ffffff); */
+            background: linear-gradient(135deg, #000, #000);
+            height: 130px;
+            border-top-right-radius: 0vh;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            opacity: 0.9;
+        }
+
+        .fixed_download_button1 {
+            width: 110vw;
+            position: fixed;
+            bottom: 0px;
+            z-index: 100;
+            /* background: linear-gradient(135deg, #ffffff, #ffffff); */
+            background: linear-gradient(135deg, #000, #000);
+            height: 130px;
+            border-top-right-radius: 0vh;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            opacity: 0.9;
+        }
+        
+        .weixin {
+            position: fixed;
+            top: 8px;
+            right: 8px;
+            z-index: 100;
+        }
+
+        .keep_out {
+            background: black;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+        }
+
+        .download_img {
+            /* width: 270px; */
+            height: 82px;
+            line-height: 82px;
+            padding: 0 50px;
+            text-align: center;
+            margin-right: 140px;
+            border-radius: 60px;
+            background-color: #c80c15;/*  */
+            color: white;
+            font-size: 28px;
+        }
+
+        .download_logo {
+            height: 90px;
+            margin-left: 40px;
+        }
+
+        .logoText {
+            height: 70px;
+            margin-left: 30px;
+        }
+
+        .youmeng {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            visibility: hidden;
+        }
+
+        .changpingjieshao {
+            position: fixed;
+            top: 10px;
+            left: 16px;
+            font-size: 3rem;
+        }
+
+        .bottomDownBox {
+            position: absolute;
+            top: 160px;
+            left: 0;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bottomDown {
+            height: 120px;
+            pointer-events: none;
+        }
+
+        .bottomDownBtn{
+            outline-color: #fff;
+            background-color: transparent;
+            outline: 0px;
+            border: 0px;
+        }
+
+        .text1 {
+            font-size: 106px;
+            color: #111111;
+            font-weight: 100;
+            margin-bottom: 20px;
+        }
+
+        .text2 {
+            font-size: 38px;
+            color: #5B5B5B;
+            font-weight: 100;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<!-- 打点的代码 -->
+<script>
+    var zcz = zcz || [];
+    window.YMPush = function (e, p, n) {
+        _zcz.push([e, p, n]);
+    }
+</script>
+<script type="text/javascript"
+    src="https://lives-tongji.oss-accelerate.aliyuncs.com/statistics.js?client_channel=108"></script>
+
+<body>
+    <div class="youmeng" id="youmeng"></div>
+    <div class="all">
+        <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/back.jpg" class="download">
+        <!-- <a href="http://cpjs.xinda22.com" class="changpingjieshao">产品介绍</a> -->
+        <div class="fixed_download_button">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logo.png" class="download_logo">
+                <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logoText.png" class="logoText">
+            </div>
+            <div class="download_img">APP下载</div>
+        </div>
+        <div class="fixed_download_button1">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logo.png" class="download_logo">
+                <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logoText.png" class="logoText">
+            </div>
+            <div class="download_img">APP下载</div>
+        </div>
+        <div class="bottomDownBox">
+            <div class="text1">美女主播专业直播</div>
+            <div class="text2">汇聚超多赛事、高清流畅无卡顿、分析赛事推荐</div>
+            <div class="text2" style="margin-bottom: 70px;">更全面、更好玩的体育赛事</div>
+            <!-- <button class="bottomDownBtn">
+            	<img class="bottomDown" src="https://wqtv-gj.oss-accelerate.aliyuncs.com/other/bottomDown.png"
+                alt="">
+            </button>  -->
+        </div>
+    </div>
+    <div class="keep_out" style="display: none"></div>
+    <div class="weixin" style="display: none"><img
+            src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/weixin.jpeg"></div>
+    <div class="alertmes">
+        <div class="am-wrapper">
+            <div class="am-mes">请复制链接用safari浏览器打开页面,下载苹果包。</div>
+            <div class="am-btn">
+                <input type="button" value="复制" class="btn am-confirm-btn">
+                <input type="button" value="取消" class="btn am-cancel-btn">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/js/download.js"></script>
+<script type="text/javascript" src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/js/jquery.js"></script>
+<script type="text/javascript">
+
+    $(function () {
+
+        //蒙层确认按钮按钮
+        $(".am-confirm-btn").click(function () {
+            //蒙层关闭以及做相应提交
+            var input1 = document.createElement("input");   // 直接构建input
+            input1.value = window.location.href;  // 设置内容
+            document.body.appendChild(input1)
+            input1.select();   // 选择实例内容
+            document.execCommand("Copy");   // 执行复制
+            document.body.removeChild(input1); // 删除临时实例
+            $(".alertmes").hide()
+        })
+        //蒙层取消按钮按钮
+        $(".am-cancel-btn").click(function () {
+            $(".alertmes").hide()
+        })
+
+        if (isWeiXin()) {
+            $(".weixin").attr("style", "display:block");
+            $(".keep_out").attr("style", "display:block");
+            $(".all").attr("style", "display:none");
+            return;
+        }
+        // 判断安卓
+        function isAndroid() {
+            var u = navigator.userAgent;
+            if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) {
+                if (window.ShowFitness !== undefined) return true;
+            }
+            return false;
+        }
+        function isIOS1() {
+            if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+                return true;
+              } else {
+                return navigator.maxTouchPoints &&
+                  navigator.maxTouchPoints > 2 &&
+                  /MacIntel/.test(navigator.platform);
+              }
+        }
+
+        function isIpadOS() {
+          return navigator.maxTouchPoints &&
+            navigator.maxTouchPoints > 2 &&
+            /MacIntel/.test(navigator.platform);
+        }
+        
+        // 判断设备为 ios
+        function isIos() {
+            var u = navigator.userAgent;
+            if (u.indexOf("iPhone") > -1 || u.indexOf("iOS") > -1 || isIOS1() || isIpadOS()) {
+                return true;
+            }
+            return false;
+        }
+
+        function isWeiXin() {
+            //window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
+            var ua = window.navigator.userAgent.toLowerCase();
+            //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // 
+        // $(".download").click(function () {
+        //     window.location.href = 'http://kh.sh1057.cn';
+        // })
+        //app 下载
+        $(".download_img").click(function () {
+            // console.log(isIos())
+            // if (isIos()) {
+            //     down()
+            // } else {
+            //     _zcz.push(['_trackEvent', '稳球_落地页', 'Android下载']);
+            //     window.location.href = "https://wqtv-app.oss-accelerate.aliyuncs.com/wqtv.apk"; //安卓下载 
+            // }
+
+            down()
+
+        })
+        //app 下载
+        $(".bottomDownBtn").click(function () {
+            // console.log(isIos())
+            // if (isIos()) {
+            //     down()
+            // } else {
+            //     _zcz.push(['_trackEvent', '稳球_落地页', 'Android下载']);
+            //     window.location.href = "https://wqtv-app.oss-accelerate.aliyuncs.com/wqtv.apk"; //安卓下载 
+            // }
+
+            down()
+
+        })
+
+
+        function down() {
+            _zcz.push(['_trackEvent', '稳球_落地页', 'ios下载']);
+
+            // location.href = "https://wqtv-app.oss-accelerate.aliyuncs.com/wqtv.mobileconfig";
+            // var i = 0;
+            // var t1 = setInterval(function () {
+            //     iosConfig()
+            // }, 3000)
+            // function iosConfig() {
+            //     if (i > 0) {
+            //         clearInterval(t1)
+            //     }
+            //     i++;
+            //     location.href = "https://wqtv-app.oss-accelerate.aliyuncs.com/setup.mobileprovision";
+            // }
+
+            if (isIos()) {
+
+                var sUserAgent = navigator.userAgent.toLowerCase();
+                if (sUserAgent.indexOf('baidu') > 0) {
+                    //是百度浏览器
+                    $(".alertmes").show()
+                } else {
+
+                location.href = "https://wqtv-gj.oss-accelerate.aliyuncs.com/app/wqtv.mobileconfig";
+                var i = 0;
+                var t1 = setInterval(function () {
+                    iosConfig()
+                }, 3000)
+                function iosConfig() {
+                    if (i > 0) {
+                        clearInterval(t1)
+                    }
+                    i++;
+                    location.href = "https://wqtv-gj.oss-accelerate.aliyuncs.com/app/setup.mobileprovision";
+                }
+                    
+                }
+
+               
+            } else {
+                window.location.href = "https://wqtv-gj.oss-accelerate.aliyuncs.com/app/wqtv.apk"; //安卓下载 
+            }
+
+        }
+
+    });
+
+</script>
+
+</html>
