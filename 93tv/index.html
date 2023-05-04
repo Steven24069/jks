@@ -1,143 +1,403 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="./93.ico"><title>93直播</title><script>var _zcz = _zcz || [];
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>稳球直播下载</title>
+	<link rel="icon" href="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logo.png">
+    <style type="text/css">
+        body {
+            background: '#fff';
+            margin: 0px;
+        }
+
+        /* 弹窗样式*/
+        .alertmes {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: none;
+            z-index: 99999;
+
+        }
+
+        .am-wrapper {
+            width: 90%;
+            margin: 500px auto 0;
+            max-width: 70%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #ffffdd;
+            border-radius: 10px;
+            box-shadow: 0 0 5px #ffffdd;
+        }
+
+        .am-mes {
+            margin: 10px 0 30px;
+            font-size: 40px;
+        }
+
+        .am-btn {
+            text-align: right;
+        }
+
+        .am-confirm-btn {
+            border: none;
+            padding: 5px 10px;
+            background-color: #1964f0;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+            font-size: 35px;
+            margin-right: 10px;
+        }
+
+        .am-cancel-btn {
+            background-color: #c9c9c9;
+            border: none;
+            padding: 5px 10px;
+            color: #fff;
+            border-radius: 4px;
+            outline: none;
+            font-size: 35px;
+        }
+        /* 弹窗样式end*/
+
+        .download {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        .fixed_download_button {
+            width: 110vw;
+            position: fixed;
+            top: 0px;
+            z-index: 100;
+            /* background: linear-gradient(135deg, #ffffff, #ffffff); */
+            background: linear-gradient(135deg, #000, #000);
+            height: 130px;
+            border-top-right-radius: 0vh;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            opacity: 0.9;
+        }
+
+        .fixed_download_button1 {
+            width: 110vw;
+            position: fixed;
+            bottom: 0px;
+            z-index: 100;
+            /* background: linear-gradient(135deg, #ffffff, #ffffff); */
+            background: linear-gradient(135deg, #000, #000);
+            height: 130px;
+            border-top-right-radius: 0vh;
+            justify-content: space-between;
+            align-items: center;
+            display: flex;
+            opacity: 0.9;
+        }
+        
+        .weixin {
+            position: fixed;
+            top: 8px;
+            right: 8px;
+            z-index: 100;
+        }
+
+        .keep_out {
+            background: black;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+        }
+
+        .download_img {
+            /* width: 270px; */
+            height: 82px;
+            line-height: 82px;
+            padding: 0 50px;
+            text-align: center;
+            margin-right: 140px;
+            border-radius: 60px;
+            background-color: #c80c15;/*  */
+            color: white;
+            font-size: 28px;
+        }
+
+        .download_logo {
+            height: 90px;
+            margin-left: 40px;
+        }
+
+        .logoText {
+            height: 70px;
+            margin-left: 30px;
+        }
+
+        .youmeng {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            visibility: hidden;
+        }
+
+        .changpingjieshao {
+            position: fixed;
+            top: 10px;
+            left: 16px;
+            font-size: 3rem;
+        }
+
+        .bottomDownBox {
+            position: absolute;
+            top: 160px;
+            left: 0;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bottomDown {
+            height: 120px;
+            pointer-events: none;
+        }
+
+        .bottomDownBtn{
+            outline-color: #fff;
+            background-color: transparent;
+            outline: 0px;
+            border: 0px;
+        }
+
+        .text1 {
+            font-size: 106px;
+            color: #111111;
+            font-weight: 100;
+            margin-bottom: 20px;
+        }
+
+        .text2 {
+            font-size: 38px;
+            color: #5B5B5B;
+            font-weight: 100;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<!-- 打点的代码 -->
+<script>
+    var zcz = zcz || [];
     window.YMPush = function (e, p, n) {
-      _zcz.push([e, p, n]);
-    }</script><style>body {
-      background-color: #fff;
+        _zcz.push([e, p, n]);
     }
+</script>
+<script type="text/javascript"
+    src="https://lives-tongji.oss-accelerate.aliyuncs.com/statistics.js?client_channel=108"></script>
 
-    .loadingLogo {
-      text-align: center;
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      margin-top: 50vh;
-      background-color: #fff;
-    }
+<body>
+    <div class="youmeng" id="youmeng"></div>
+    <div class="all">
+        <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/back.jpg" class="download">
+        <!-- <a href="http://cpjs.xinda22.com" class="changpingjieshao">产品介绍</a> -->
+        <div class="fixed_download_button">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logo.png" class="download_logo">
+                <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logoText.png" class="logoText">
+            </div>
+            <div class="download_img">APP下载</div>
+        </div>
+        <div class="fixed_download_button1">
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logo.png" class="download_logo">
+                <img src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/logoText.png" class="logoText">
+            </div>
+            <div class="download_img">APP下载</div>
+        </div>
+        <div class="bottomDownBox">
+            <div class="text1">美女主播专业直播</div>
+            <div class="text2">汇聚超多赛事、高清流畅无卡顿、分析赛事推荐</div>
+            <div class="text2" style="margin-bottom: 70px;">更全面、更好玩的体育赛事</div>
+            <!-- <button class="bottomDownBtn">
+            	<img class="bottomDown" src="https://wqtv-gj.oss-accelerate.aliyuncs.com/other/bottomDown.png"
+                alt="">
+            </button>  -->
+        </div>
+    </div>
+    <div class="keep_out" style="display: none"></div>
+    <div class="weixin" style="display: none"><img
+            src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/other/weixin.jpeg"></div>
+    <div class="alertmes">
+        <div class="am-wrapper">
+            <div class="am-mes">请复制链接用safari浏览器打开页面,下载苹果包。</div>
+            <div class="am-btn">
+                <input type="button" value="复制" class="btn am-confirm-btn">
+                <input type="button" value="取消" class="btn am-cancel-btn">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/js/download.js"></script>
+<script type="text/javascript" src="https://wqtv-gj.oss-accelerate.aliyuncs.com/update/js/jquery.js"></script>
+<script type="text/javascript">
 
-    .logoImg {
-      width: 80px;
-      height: 80px;
-      margin-top: -59px;
-    }
+    $(function () {
 
-    .m-load2 {
-      width: 36px;
-      height: 36px;
-      margin: 10px auto;
-    }
+        //蒙层确认按钮按钮
+        $(".am-confirm-btn").click(function () {
+            //蒙层关闭以及做相应提交
+            var input1 = document.createElement("input");   // 直接构建input
+            input1.value = window.location.href;  // 设置内容
+            document.body.appendChild(input1)
+            input1.select();   // 选择实例内容
+            document.execCommand("Copy");   // 执行复制
+            document.body.removeChild(input1); // 删除临时实例
+            $(".alertmes").hide()
+        })
+        //蒙层取消按钮按钮
+        $(".am-cancel-btn").click(function () {
+            $(".alertmes").hide()
+        })
 
-    .m-load2 {
-      background: #fff;
-    }
+        if (isWeiXin()) {
+            $(".weixin").attr("style", "display:block");
+            $(".keep_out").attr("style", "display:block");
+            $(".all").attr("style", "display:none");
+            return;
+        }
+        // 判断安卓
+        function isAndroid() {
+            var u = navigator.userAgent;
+            if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) {
+                if (window.ShowFitness !== undefined) return true;
+            }
+            return false;
+        }
+        function isIOS1() {
+            if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+                return true;
+              } else {
+                return navigator.maxTouchPoints &&
+                  navigator.maxTouchPoints > 2 &&
+                  /MacIntel/.test(navigator.platform);
+              }
+        }
 
-    /** 加载动画的静态样式 **/
-    .m-load2 {
-      position: relative;
-    }
+        function isIpadOS() {
+          return navigator.maxTouchPoints &&
+            navigator.maxTouchPoints > 2 &&
+            /MacIntel/.test(navigator.platform);
+        }
+        
+        // 判断设备为 ios
+        function isIos() {
+            var u = navigator.userAgent;
+            if (u.indexOf("iPhone") > -1 || u.indexOf("iOS") > -1 || isIOS1() || isIpadOS()) {
+                return true;
+            }
+            return false;
+        }
 
-    .m-load2 .line div {
-      position: absolute;
-      left: 16px;
-      top: 0;
-      width: 3px;
-      height: 36px;
-    }
+        function isWeiXin() {
+            //window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
+            var ua = window.navigator.userAgent.toLowerCase();
+            //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
-    .m-load2 .line div:before,
-    .m-load2 .line div:after {
-      content: '';
-      display: block;
-      height: 50%;
-      background: #333;
-      border-radius: 5px;
-    }
+        // 
+        // $(".download").click(function () {
+        //     window.location.href = 'http://kh.sh1057.cn';
+        // })
+        //app 下载
+        $(".download_img").click(function () {
+            // console.log(isIos())
+            // if (isIos()) {
+            //     down()
+            // } else {
+            //     _zcz.push(['_trackEvent', '稳球_落地页', 'Android下载']);
+            //     window.location.href = "https://wqtv-app.oss-accelerate.aliyuncs.com/wqtv.apk"; //安卓下载 
+            // }
 
-    .m-load2 .line div:nth-child(2) {
-      -webkit-transform: rotate(30deg);
-    }
+            down()
 
-    .m-load2 .line div:nth-child(3) {
-      -webkit-transform: rotate(60deg);
-    }
+        })
+        //app 下载
+        $(".bottomDownBtn").click(function () {
+            // console.log(isIos())
+            // if (isIos()) {
+            //     down()
+            // } else {
+            //     _zcz.push(['_trackEvent', '稳球_落地页', 'Android下载']);
+            //     window.location.href = "https://wqtv-app.oss-accelerate.aliyuncs.com/wqtv.apk"; //安卓下载 
+            // }
 
-    .m-load2 .line div:nth-child(4) {
-      -webkit-transform: rotate(90deg);
-    }
+            down()
 
-    .m-load2 .line div:nth-child(5) {
-      -webkit-transform: rotate(120deg);
-    }
+        })
 
-    .m-load2 .line div:nth-child(6) {
-      -webkit-transform: rotate(150deg);
-    }
 
-    .m-load2 .circlebg {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 18px;
-      height: 18px;
-      margin: -9px 0 0 -9px;
-      background: #fff;
-      border-radius: 18px;
-    }
+        function down() {
+            _zcz.push(['_trackEvent', '稳球_落地页', 'ios下载']);
 
-    /** 加载动画 **/
-    @-webkit-keyframes load {
-      0% {
-        opacity: 0;
-      }
+            // location.href = "https://wqtv-app.oss-accelerate.aliyuncs.com/wqtv.mobileconfig";
+            // var i = 0;
+            // var t1 = setInterval(function () {
+            //     iosConfig()
+            // }, 3000)
+            // function iosConfig() {
+            //     if (i > 0) {
+            //         clearInterval(t1)
+            //     }
+            //     i++;
+            //     location.href = "https://wqtv-app.oss-accelerate.aliyuncs.com/setup.mobileprovision";
+            // }
 
-      100% {
-        opacity: 1;
-      }
-    }
+            if (isIos()) {
 
-    .m-load2 .line div:nth-child(1):before {
-      -webkit-animation: load 1.2s linear 0s infinite;
-    }
+                var sUserAgent = navigator.userAgent.toLowerCase();
+                if (sUserAgent.indexOf('baidu') > 0) {
+                    //是百度浏览器
+                    $(".alertmes").show()
+                } else {
 
-    .m-load2 .line div:nth-child(2):before {
-      -webkit-animation: load 1.2s linear 0.1s infinite;
-    }
+                location.href = "https://wqtv-gj.oss-accelerate.aliyuncs.com/app/wqtv.mobileconfig";
+                var i = 0;
+                var t1 = setInterval(function () {
+                    iosConfig()
+                }, 3000)
+                function iosConfig() {
+                    if (i > 0) {
+                        clearInterval(t1)
+                    }
+                    i++;
+                    location.href = "https://wqtv-gj.oss-accelerate.aliyuncs.com/app/setup.mobileprovision";
+                }
+                    
+                }
 
-    .m-load2 .line div:nth-child(3):before {
-      -webkit-animation: load 1.2s linear 0.2s infinite;
-    }
+               
+            } else {
+                window.location.href = "https://wqtv-gj.oss-accelerate.aliyuncs.com/app/wqtv.apk"; //安卓下载 
+            }
 
-    .m-load2 .line div:nth-child(4):before {
-      -webkit-animation: load 1.2s linear 0.3s infinite;
-    }
+        }
 
-    .m-load2 .line div:nth-child(5):before {
-      -webkit-animation: load 1.2s linear 0.4s infinite;
-    }
+    });
 
-    .m-load2 .line div:nth-child(6):before {
-      -webkit-animation: load 1.2s linear 0.5s infinite;
-    }
+</script>
 
-    .m-load2 .line div:nth-child(1):after {
-      -webkit-animation: load 1.2s linear 0.6s infinite;
-    }
-
-    .m-load2 .line div:nth-child(2):after {
-      -webkit-animation: load 1.2s linear 0.7s infinite;
-    }
-
-    .m-load2 .line div:nth-child(3):after {
-      -webkit-animation: load 1.2s linear 0.8s infinite;
-    }
-
-    .m-load2 .line div:nth-child(4):after {
-      -webkit-animation: load 1.2s linear 0.9s infinite;
-    }
-
-    .m-load2 .line div:nth-child(5):after {
-      -webkit-animation: load 1.2s linear 1s infinite;
-    }
-
-    .m-load2 .line div:nth-child(6):after {
-      -webkit-animation: load 1.2s linear 1.1s infinite;
-    }</style><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-099b9546.e5a9006a.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-0db1ab76.a1a292d6.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-0e241a18.aff40d3d.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-0fc649ff.b97a5420.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-1387413f.dbf01fc3.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-161b22fd.9c9a4828.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-1ed81d4c.c4f80ad2.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-2003dd8c.3e037c8c.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-21b2c11c.1bcfab5e.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-22091385.61d97368.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-27073b87.a7c2f5e5.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-29ae58bd.a51821c5.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-318188a8.6b3a4494.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-333064ab.3ed45a74.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-394c9b17.de70ab1a.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-3fc7b7dd.26be7584.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-4127adfe.95cb2214.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-41e161b4.85440146.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-442f2a1f.1ba57a8a.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-4684a8a2.06a258b9.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-4c00a2e5.63ed3d9a.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-60b872f6.031b9790.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-6566ec0f.1df92780.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-6735b5dc.07ba0260.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-6d57f74e.e081c915.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-7c5bbc3a.b25ff8c0.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-96f334e0.eacd2b32.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-98c33168.c52d75d0.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-99f4429a.e52074cb.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-a2af3736.776d77d4.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-b7ecd110.05b4722b.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-c76aa8aa.6ed18704.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-cc71aac2.32307012.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-d66a723e.846c88ef.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-e01bf61a.b3e3795e.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-e9c26982.afda7c96.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-f8e19016.9af9e433.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-f99aa068.03bf2e3b.css" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-099b9546.99ea81c4.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-0db1ab76.8d30bde0.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-0e241a18.7a3c77a9.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-0fc649ff.a01ba617.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-1387413f.5eb4492c.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-161b22fd.89507b27.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-1ed81d4c.5c8deef8.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-2003dd8c.e8629e7e.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-21b2c11c.aa691490.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-22091385.b3a70711.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-27073b87.165adc44.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-29ae58bd.14ec6b21.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-318188a8.89acc807.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-333064ab.b3cf4c94.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-394c9b17.a2461114.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-3fc7b7dd.93c10731.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-4127adfe.7d4f6dd9.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-41e161b4.429d6b29.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-442f2a1f.1c561af0.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-4684a8a2.fd6ebefa.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-4c00a2e5.437b9f75.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-53e50c68.bae79cc3.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-60b872f6.cda5d956.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-6566ec0f.fdd27057.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-6735b5dc.038bbdf3.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-6d57f74e.c0164c13.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-7c5bbc3a.e76e8d28.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-96f334e0.72e2dd29.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-98c33168.2d2450ea.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-99f4429a.70f78465.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-a2af3736.16f1d965.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-b7ecd110.e4dd58a5.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-c76aa8aa.d8a5be5f.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-cc71aac2.4c1b827c.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-d66a723e.495915d7.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-e01bf61a.c715ce57.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-e9c26982.4c17961a.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-f8e19016.3ffe39c6.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-f99aa068.2d0d64f8.js" rel="prefetch"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/app.59133f35.css" rel="preload" as="style"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-vendors.4a334506.css" rel="preload" as="style"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/app.61d32314.js" rel="preload" as="script"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-vendors.b5ba4312.js" rel="preload" as="script"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/chunk-vendors.4a334506.css" rel="stylesheet"><link href="https://93-h5-1310040068.cos.accelerate.myqcloud.com/css/app.59133f35.css" rel="stylesheet"></head><body><div id="app"></div><script src="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/chunk-vendors.b5ba4312.js"></script><script src="https://93-h5-1310040068.cos.accelerate.myqcloud.com/js/app.61d32314.js"></script></body><script src="https://ddtongji-1309807825.cos.accelerate.myqcloud.com/statistics.js?client_channel=5"></script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({ id: "JmnfBzGto5ZShBD7", ck: "JmnfBzGto5ZShBD7" })</script></html>
+</html>
